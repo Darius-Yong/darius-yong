@@ -191,7 +191,7 @@
 
         /* Certification Cards */
         .cert-card {
-            background: linear-gradient(45deg, #c6ff97 0%, #b1e65d 100%);
+            background: linear-gradient(45deg, #11b006 0%, #00bd49 100%);
             color: white;
             padding: 2.5rem;
             border-radius: 12px;
@@ -217,6 +217,32 @@
         .cert-card .date {
             opacity: 0.8;
             font-size: 0.9rem;
+        }
+
+        /* Download Button */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+            text-decoration: none;
+            color: white;
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
         }
 
         /* Footer */
@@ -281,13 +307,13 @@
             </div>
             
             <div class="about-content">
-                <p>Welcome to my portfolio! I'm Alex Johnson, a passionate software engineer with over 8 years of experience in developing innovative solutions that bridge the gap between complex technical challenges and real-world applications. My journey began during my computer science studies at Stanford University, where I discovered my love for creating technology that makes a meaningful impact.</p>
+                <p>Welcome to my portfolio! I'm Darius Yong, a passionate problem solver and data analyst with a strong foundation in programming and mathematics. My journey began with competitive programming and mathematics competitions, where I discovered my love for tackling complex challenges and finding innovative solutions.</p>
                 
-                <p>Throughout my career, I've had the privilege of working with cutting-edge technologies including artificial intelligence, machine learning, and cloud computing. I specialize in full-stack development with expertise in Python, JavaScript, React, and Node.js. My approach to problem-solving combines analytical thinking with creative innovation, allowing me to deliver solutions that are both technically sound and user-friendly.</p>
+                <p>Throughout my academic career, I've had the privilege of working with cutting-edge technologies including Python, C++, machine learning, and data visualization. I specialize in data analysis with expertise in SQL, pandas, and statistical modeling. My approach to problem-solving combines analytical thinking with creative innovation, allowing me to deliver solutions that are both technically sound and practically applicable.</p>
                 
-                <p>What drives me most is the opportunity to lead teams and mentor emerging talent in the tech industry. I believe that the best solutions come from collaborative environments where diverse perspectives are valued and encouraged. When I'm not coding, you can find me contributing to open-source projects, speaking at tech conferences, or exploring the latest developments in quantum computing and blockchain technology.</p>
+                <p>What drives me most is the opportunity to learn new technologies and apply them to real-world problems. I believe that the best solutions come from persistent practice and continuous learning. When I'm not coding, you can find me participating in programming competitions, working on data analysis projects, or exploring the latest developments in artificial intelligence and machine learning.</p>
                 
-                <p>I'm always excited to take on new challenges and collaborate with like-minded professionals who share my passion for using technology to create positive change in the world.</p>
+                <p>I'm always excited to take on new challenges and collaborate with like-minded individuals who share my passion for using technology and data to create meaningful insights and solutions.</p>
             </div>
         </section>
 
@@ -311,7 +337,7 @@
                         <div class="date">January - March 2025</div>
                         <h4>PERSE Coding</h4>
                         <div class="position">Distinction - Round 2</div>
-                        <p>Although the PERSE Coding Competition was simpler, I still had to exercise complex Python Programming techniques and learn how to manage this competition in a group setting..</p>
+                        <p>Although the PERSE Coding Competition was simpler, I still had to exercise complex Python Programming techniques and learn how to manage this competition in a group setting.</p>
                     </div>
                     <div class="card">
                         <div class="date">April 2023</div>
@@ -323,7 +349,7 @@
                         <div class="date">August 2022</div>
                         <h4>Australian Mathematics Competition</h4>
                         <div class="position">Gold Award</div>
-                        <p>Participating in the Australian Mathematics Competition challenged me to think critically and approach unfamiliar problems with confidence. The competition’s unique emphasis on logical reasoning and creative problem-solving improved my ability to tackle questions without relying solely on memorised formulas. It taught me to persevere through uncertainty, trust my instincts, and develop adaptable thinking—skills that now influence how I approach challenges both inside and outside the classroom.</p>
+                        <p>Participating in the Australian Mathematics Competition challenged me to think critically and approach unfamiliar problems with confidence. The competition's unique emphasis on logical reasoning and creative problem-solving improved my ability to tackle questions without relying solely on memorised formulas. It taught me to persevere through uncertainty, trust my instincts, and develop adaptable thinking—skills that now influence how I approach challenges both inside and outside the classroom.</p>
                     </div>
                 </div>
             </div>
@@ -342,13 +368,13 @@
                         <div class="date">April - May 2025</div>
                         <h4>Radio Communication Integrated Performance Task</h4>
                         <div class="position">Lead Programmer</div>
-                        <p>Held a vital role by not only programming an encoder, which converted text into a .wav file to be broadcast, but by also programming a decoder, converting messages recieved through our antenna back into English text.</p>
+                        <p>Held a vital role by not only programming an encoder, which converted text into a .wav file to be broadcast, but by also programming a decoder, converting messages received through our antenna back into English text.</p>
                     </div>
                     <div class="card">
                         <div class="date">April - May 2025</div>
                         <h4>SST Integrated Design Challenge</h4>
                         <div class="position">Software Engineer</div>
-                        <p>My main role was preparing and training a Machine Learning Model which could later be integrated into a python project and arduino robot to detect objects and run algorithms. </p>
+                        <p>My main role was preparing and training a Machine Learning Model which could later be integrated into a python project and arduino robot to detect objects and run algorithms.</p>
                     </div>
                     <div class="card">
                         <div class="date">February 2025</div>
@@ -375,7 +401,7 @@
                     </div>
                     <div class="cert-card">
                         <h4>NOI Basic December Training</h4>
-                        <div class="issuer">NOI Committee</div>
+                        <div class="issuer">NOI Singapore</div>
                         <div class="date">2024</div>
                     </div>
                     <div class="cert-card">
@@ -383,6 +409,22 @@
                         <div class="issuer">Coursera</div>
                         <div class="date">2023</div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Download Section -->
+            <div class="sub-section">
+                <h3>Download Certificate Portfolio</h3>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p style="margin-bottom: 2rem; color: #666; font-size: 1.1rem;">Download my competiiton certificates</p>
+                    <a href="cert.pdf" download="Darius_Yong_Certifications.pdf" class="download-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download Certificate Portfolio
+                    </a>
                 </div>
             </div>
         </section>
