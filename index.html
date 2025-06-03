@@ -1,34 +1,407 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Darius Yong's NP-IDP Portfolio</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darius Yong</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #d0e7fff2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #667eea;
+            color: white;
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 1rem auto;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Me Content */
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+
+        /* Sub-sections */
+        .sub-section {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .sub-section h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border-top: 4px solid #667eea;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h4 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .card .date {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .position {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Certification Cards */
+        .cert-card {
+            background: linear-gradient(45deg, #c6ff97 0%, #b1e65d 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: scale(1.05);
+        }
+
+        .cert-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card .issuer {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card .date {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Darius Yong</h1>
-    <p>Programmer | Data Scientist</p>
-  </header>
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>ztemp</p>
-    </section>
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>filler</strong></strong> - filler</li>
-        <li><strong>p2</strong> - wip</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Email: darius_yong@s2022.ssts.edu.sg</h2>
-    </section>
-  </main>
-  <footer>
-    <p>Dairus Yong - 2025</p>
-  </footer>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Darius Yong</h1>
+            <p>Problem Solver, Innovator, Data Analyst</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#accomplishments">Accomplishments</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Section 1: About Me -->
+        <section id="about">
+            <div class="section-header">
+                <h2>About Me</h2>
+            </div>
+            
+            <div class="about-content">
+                <p>Welcome to my portfolio! I'm Alex Johnson, a passionate software engineer with over 8 years of experience in developing innovative solutions that bridge the gap between complex technical challenges and real-world applications. My journey began during my computer science studies at Stanford University, where I discovered my love for creating technology that makes a meaningful impact.</p>
+                
+                <p>Throughout my career, I've had the privilege of working with cutting-edge technologies including artificial intelligence, machine learning, and cloud computing. I specialize in full-stack development with expertise in Python, JavaScript, React, and Node.js. My approach to problem-solving combines analytical thinking with creative innovation, allowing me to deliver solutions that are both technically sound and user-friendly.</p>
+                
+                <p>What drives me most is the opportunity to lead teams and mentor emerging talent in the tech industry. I believe that the best solutions come from collaborative environments where diverse perspectives are valued and encouraged. When I'm not coding, you can find me contributing to open-source projects, speaking at tech conferences, or exploring the latest developments in quantum computing and blockchain technology.</p>
+                
+                <p>I'm always excited to take on new challenges and collaborate with like-minded professionals who share my passion for using technology to create positive change in the world.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Accomplishments -->
+        <section id="accomplishments">
+            <div class="section-header">
+                <h2>Accomplishments</h2>
+            </div>
+
+            <!-- Sub-section: Competitions -->
+            <div class="sub-section">
+                <h3>Competitions</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="date">March 2025</div>
+                        <h4>National Olympiad of Informatics</h4>
+                        <div class="position">Bronze Award</div>
+                        <p>Arguably my hardest competition that I have attended, I had to learn C++ from scratch, and programming methods such as Pre-computation, Graph Theory, and Binary Search. I had to hone my competitive programming skills to qualify and even obtain a Bronze Medal. Although I had obtained a Bronze medal, I still had the desire to do better and better practice some advanced programming techniques.</p>
+                    </div>
+                    <div class="card">
+                        <div class="date">January - March 2025</div>
+                        <h4>PERSE Coding</h4>
+                        <div class="position">Distinction - Round 2</div>
+                        <p>Although the PERSE Coding Competition was simpler, I still had to exercise complex Python Programming techniques and learn how to manage this competition in a group setting..</p>
+                    </div>
+                    <div class="card">
+                        <div class="date">April 2023</div>
+                        <h4>Singapore Asian Schools Math Olympiad</h4>
+                        <div class="position">Silver Award</div>
+                        <p>SASMO pushed me beyond standard curriculum boundaries, training me to handle complex, multi-step problems under time constraints. The competition honed my precision and strategic thinking, as even small mistakes could cost significant marks. Preparing for SASMO deepened my mathematical understanding and fostered discipline and mental endurance, helping me stay focused and composed in high-stakes situations.</p>
+                    </div>
+                    <div class="card">
+                        <div class="date">August 2022</div>
+                        <h4>Australian Mathematics Competition</h4>
+                        <div class="position">Gold Award</div>
+                        <p>Participating in the Australian Mathematics Competition challenged me to think critically and approach unfamiliar problems with confidence. The competition’s unique emphasis on logical reasoning and creative problem-solving improved my ability to tackle questions without relying solely on memorised formulas. It taught me to persevere through uncertainty, trust my instincts, and develop adaptable thinking—skills that now influence how I approach challenges both inside and outside the classroom.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sub-section: Performance Tasks -->
+            <div class="sub-section">
+                <h3>Performance Tasks</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="date">September 2024 - TBA</div>
+                        <h4>2025 IDP Capstone Project</h4>
+                        <div class="position">Secondary Research Expert</div>
+                        <p>While this task has not yet concluded, my skills in secondary research were critical in ensuring that our preliminary report would be to the highest quality.</p>
+                    </div>
+                    <div class="card">
+                        <div class="date">April - May 2025</div>
+                        <h4>Radio Communication Integrated Performance Task</h4>
+                        <div class="position">Lead Programmer</div>
+                        <p>Held a vital role by not only programming an encoder, which converted text into a .wav file to be broadcast, but by also programming a decoder, converting messages recieved through our antenna back into English text.</p>
+                    </div>
+                    <div class="card">
+                        <div class="date">April - May 2025</div>
+                        <h4>SST Integrated Design Challenge</h4>
+                        <div class="position">Software Engineer</div>
+                        <p>My main role was preparing and training a Machine Learning Model which could later be integrated into a python project and arduino robot to detect objects and run algorithms. </p>
+                    </div>
+                    <div class="card">
+                        <div class="date">February 2025</div>
+                        <h4>Mathematics Statistics Task</h4>
+                        <div class="position">Statistician</div>
+                        <p>Used Data Analysis and Visualisation using Python Modules such as pandas and seaborn to do statistical analysis on the average cost per square metre of flats, categorised by town.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sub-section: Certifications -->
+            <div class="sub-section">
+                <h3>Certifications</h3>
+                <div class="cards-grid">
+                    <div class="cert-card">
+                        <h4>Python Data Visualisation</h4>
+                        <div class="issuer">Datacamp</div>
+                        <div class="date">2024</div>
+                    </div>
+                    <div class="cert-card">
+                        <h4>SQL Certifications</h4>
+                        <div class="issuer">Datacamp</div>
+                        <div class="date">2025</div>
+                    </div>
+                    <div class="cert-card">
+                        <h4>NOI Basic December Training</h4>
+                        <div class="issuer">NOI Committee</div>
+                        <div class="date">2024</div>
+                    </div>
+                    <div class="cert-card">
+                        <h4>PY4E Certification</h4>
+                        <div class="issuer">Coursera</div>
+                        <div class="date">2023</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
