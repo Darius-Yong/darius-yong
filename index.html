@@ -116,14 +116,36 @@
             margin: 0 auto;
         }
 
-        /* About Me Content */
+        /* About Me Content with Image */
+        .about-container {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-image {
+            flex-shrink: 0;
+            width: 300px;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .about-content {
             font-size: 1.1rem;
             line-height: 1.8;
             color: #555;
-            max-width: 800px;
-            margin: 0 auto;
             text-align: justify;
+            flex: 1;
         }
 
         /* Sub-sections */
@@ -151,15 +173,36 @@
 
         .card {
             background: white;
-            padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
             border-top: 4px solid #667eea;
+            overflow: hidden;
         }
 
         .card:hover {
             transform: translateY(-5px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 2rem;
         }
 
         .card h4 {
@@ -191,16 +234,35 @@
 
         /* Certification Cards */
         .cert-card {
-            background: linear-gradient(45deg, #11b006 0%, #00bd49 100%);
+            background: linear-gradient(45deg, #13eb03 0%, #00bd49 100%);
             color: white;
-            padding: 2.5rem;
             border-radius: 12px;
             text-align: center;
             transition: transform 0.3s ease;
+            overflow: hidden;
         }
 
         .cert-card:hover {
             transform: scale(1.05);
+        }
+
+        .cert-card-image {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .cert-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        .cert-card-content {
+            padding: 2rem;
+            position: relative;
+            margin-top: -50px;
         }
 
         .cert-card h4 {
@@ -276,6 +338,17 @@
             .cards-grid {
                 grid-template-columns: 1fr;
             }
+
+            .about-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .about-image {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
@@ -306,14 +379,19 @@
                 <h2>About Me</h2>
             </div>
             
-            <div class="about-content">
-                <p>Welcome to my portfolio! I'm Darius Yong, a passionate problem solver and data analyst with a strong foundation in programming and mathematics. My journey began with competitive programming and mathematics competitions, where I discovered my love for tackling complex challenges and finding innovative solutions.</p>
-                
-                <p>Throughout my academic career, I've had the privilege of working with cutting-edge technologies including Python, C++, machine learning, and data visualization. I specialize in data analysis with expertise in SQL, pandas, and statistical modeling. My approach to problem-solving combines analytical thinking with creative innovation, allowing me to deliver solutions that are both technically sound and practically applicable.</p>
-                
-                <p>What drives me most is the opportunity to learn new technologies and apply them to real-world problems. I believe that the best solutions come from persistent practice and continuous learning. When I'm not coding, you can find me participating in programming competitions, working on data analysis projects, or exploring the latest developments in artificial intelligence and machine learning.</p>
-                
-                <p>I'm always excited to take on new challenges and collaborate with like-minded individuals who share my passion for using technology and data to create meaningful insights and solutions.</p>
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="/pfp.png?height=400&width=300" alt="Darius Yong Profile Picture">
+                </div>
+                <div class="about-content">
+                    <p>Welcome to my portfolio! I'm Darius Yong, a passionate problem solver and data analyst with a strong foundation in programming and mathematics. My journey began with competitive programming and mathematics competitions, where I discovered my love for tackling complex challenges and finding innovative solutions.</p>
+                    
+                    <p>Throughout my academic career, I've had the privilege of working with cutting-edge technologies including Python, C++, machine learning, and data visualization. I specialize in data analysis with expertise in SQL, pandas, and statistical modeling. My approach to problem-solving combines analytical thinking with creative innovation, allowing me to deliver solutions that are both technically sound and practically applicable.</p>
+                    
+                    <p>What drives me most is the opportunity to learn new technologies and apply them to real-world problems. I believe that the best solutions come from persistent practice and continuous learning. When I'm not coding, you can find me participating in programming competitions, working on data analysis projects, or exploring the latest developments in artificial intelligence and machine learning.</p>
+                    
+                    <p>I'm always excited to take on new challenges and collaborate with like-minded individuals who share my passion for using technology and data to create meaningful insights and solutions.</p>
+                </div>
             </div>
         </section>
 
@@ -328,28 +406,48 @@
                 <h3>Competitions</h3>
                 <div class="cards-grid">
                     <div class="card">
-                        <div class="date">March 2025</div>
-                        <h4>National Olympiad of Informatics</h4>
-                        <div class="position">Bronze Award</div>
-                        <p>Arguably my hardest competition that I have attended, I had to learn C++ from scratch, and programming methods such as Pre-computation, Graph Theory, and Binary Search. I had to hone my competitive programming skills to qualify and even obtain a Bronze Medal. Although I had obtained a Bronze medal, I still had the desire to do better and better practice some advanced programming techniques.</p>
+                        <div class="card-image">
+                            <img src="/noi.png?height=200&width=400" alt="National Olympiad of Informatics">
+                        </div>
+                        <div class="card-content">
+                            <div class="date">March 2025</div>
+                            <h4>National Olympiad of Informatics</h4>
+                            <div class="position">Bronze Award</div>
+                            <p>Arguably my hardest competition that I have attended, I had to learn C++ from scratch, and programming methods such as Pre-computation, Graph Theory, and Binary Search. I had to hone my competitive programming skills to qualify and even obtain a Bronze Medal. Although I had obtained a Bronze medal, I still had the desire to do better and better practice some advanced programming techniques.</p>
+                        </div>
                     </div>
                     <div class="card">
-                        <div class="date">January - March 2025</div>
-                        <h4>PERSE Coding</h4>
-                        <div class="position">Distinction - Round 2</div>
-                        <p>Although the PERSE Coding Competition was simpler, I still had to exercise complex Python Programming techniques and learn how to manage this competition in a group setting.</p>
+                        <div class="card-image">
+                            <img src="/pctc.png?height=200&width=400" alt="PERSE Coding Competition">
+                        </div>
+                        <div class="card-content">
+                            <div class="date">January - March 2025</div>
+                            <h4>PERSE Coding</h4>
+                            <div class="position">Distinction - Round 2</div>
+                            <p>Although the PERSE Coding Competition was simpler, I still had to exercise complex Python Programming techniques and learn how to manage this competition in a group setting.</p>
+                        </div>
                     </div>
                     <div class="card">
-                        <div class="date">April 2023</div>
-                        <h4>Singapore Asian Schools Math Olympiad</h4>
-                        <div class="position">Silver Award</div>
-                        <p>SASMO pushed me beyond standard curriculum boundaries, training me to handle complex, multi-step problems under time constraints. The competition honed my precision and strategic thinking, as even small mistakes could cost significant marks. Preparing for SASMO deepened my mathematical understanding and fostered discipline and mental endurance, helping me stay focused and composed in high-stakes situations.</p>
+                        <div class="card-image">
+                            <img src="/sasmo.png?height=200&width=400" alt="Singapore Asian Schools Math Olympiad">
+                        </div>
+                        <div class="card-content">
+                            <div class="date">April 2023</div>
+                            <h4>Singapore Asian Schools Math Olympiad</h4>
+                            <div class="position">Silver Award</div>
+                            <p>SASMO pushed me beyond standard curriculum boundaries, training me to handle complex, multi-step problems under time constraints. The competition honed my precision and strategic thinking, as even small mistakes could cost significant marks. Preparing for SASMO deepened my mathematical understanding and fostered discipline and mental endurance, helping me stay focused and composed in high-stakes situations.</p>
+                        </div>
                     </div>
                     <div class="card">
-                        <div class="date">August 2022</div>
-                        <h4>Australian Mathematics Competition</h4>
-                        <div class="position">Gold Award</div>
-                        <p>Participating in the Australian Mathematics Competition challenged me to think critically and approach unfamiliar problems with confidence. The competition's unique emphasis on logical reasoning and creative problem-solving improved my ability to tackle questions without relying solely on memorised formulas. It taught me to persevere through uncertainty, trust my instincts, and develop adaptable thinking—skills that now influence how I approach challenges both inside and outside the classroom.</p>
+                        <div class="card-image">
+                            <img src="/amc.png?height=200&width=400" alt="Australian Mathematics Competition">
+                        </div>
+                        <div class="card-content">
+                            <div class="date">August 2022</div>
+                            <h4>Australian Mathematics Competition</h4>
+                            <div class="position">Gold Award</div>
+                            <p>Participating in the Australian Mathematics Competition challenged me to think critically and approach unfamiliar problems with confidence. The competition's unique emphasis on logical reasoning and creative problem-solving improved my ability to tackle questions without relying solely on memorised formulas. It taught me to persevere through uncertainty, trust my instincts, and develop adaptable thinking—skills that now influence how I approach challenges both inside and outside the classroom.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -359,28 +457,48 @@
                 <h3>Performance Tasks</h3>
                 <div class="cards-grid">
                     <div class="card">
-                        <div class="date">September 2024 - TBA</div>
-                        <h4>2025 IDP Capstone Project</h4>
-                        <div class="position">Secondary Research Expert</div>
-                        <p>While this task has not yet concluded, my skills in secondary research were critical in ensuring that our preliminary report would be to the highest quality.</p>
+                        <div class="card-image">
+                            <img src="/capstone.png?height=200&width=400" alt="IDP Capstone Project">
+                        </div>
+                        <div class="card-content">
+                            <div class="date">September 2024 - TBA</div>
+                            <h4>2025 IDP Capstone Project</h4>
+                            <div class="position">Secondary Research Expert</div>
+                            <p>While this task has not yet concluded, my skills in secondary research were critical in ensuring that our preliminary report would be to the highest quality.</p>
+                        </div>
                     </div>
                     <div class="card">
-                        <div class="date">April - May 2025</div>
-                        <h4>Radio Communication Integrated Performance Task</h4>
-                        <div class="position">Lead Programmer</div>
-                        <p>Held a vital role by not only programming an encoder, which converted text into a .wav file to be broadcast, but by also programming a decoder, converting messages received through our antenna back into English text.</p>
+                        <div class="card-image">
+                            <img src="/ampt.png?height=200&width=400" alt="Radio Communication Project">
+                        </div>
+                        <div class="card-content">
+                            <div class="date">April - May 2025</div>
+                            <h4>Radio Communication Integrated Performance Task</h4>
+                            <div class="position">Lead Programmer</div>
+                            <p>Held a vital role by not only programming an encoder, which converted text into a .wav file to be broadcast, but by also programming a decoder, converting messages received through our antenna back into English text.</p>
+                        </div>
                     </div>
                     <div class="card">
-                        <div class="date">April - May 2025</div>
-                        <h4>SST Integrated Design Challenge</h4>
-                        <div class="position">Software Engineer</div>
-                        <p>My main role was preparing and training a Machine Learning Model which could later be integrated into a python project and arduino robot to detect objects and run algorithms.</p>
+                        <div class="card-image">
+                            <img src="/idc.png?height=200&width=400" alt="SST Integrated Design Challenge">
+                        </div>
+                        <div class="card-content">
+                            <div class="date">April - May 2025</div>
+                            <h4>SST Integrated Design Challenge</h4>
+                            <div class="position">Software Engineer</div>
+                            <p>My main role was preparing and training a Machine Learning Model which could later be integrated into a python project and arduino robot to detect objects and run algorithms.</p>
+                        </div>
                     </div>
                     <div class="card">
-                        <div class="date">February 2025</div>
-                        <h4>Mathematics Statistics Task</h4>
-                        <div class="position">Statistician</div>
-                        <p>Used Data Analysis and Visualisation using Python Modules such as pandas and seaborn to do statistical analysis on the average cost per square metre of flats, categorised by town.</p>
+                        <div class="card-image">
+                            <img src="/stat.png?height=200&width=400" alt="Mathematics Statistics Task">
+                        </div>
+                        <div class="card-content">
+                            <div class="date">February 2025</div>
+                            <h4>Mathematics Statistics Task</h4>
+                            <div class="position">Statistician</div>
+                            <p>Used Data Analysis and Visualisation using Python Modules such as pandas and seaborn to do statistical analysis on the average cost per square metre of flats, categorised by town.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -390,24 +508,44 @@
                 <h3>Certifications</h3>
                 <div class="cards-grid">
                     <div class="cert-card">
-                        <h4>Python Data Visualisation</h4>
-                        <div class="issuer">Datacamp</div>
-                        <div class="date">2024</div>
+                        <div class="cert-card-image">
+                            <img src="/pdf.png?height=150&width=400" alt="Python Data Visualisation Certificate">
+                        </div>
+                        <div class="cert-card-content">
+                            <h4>Python Data Visualisation</h4>
+                            <div class="issuer">Datacamp</div>
+                            <div class="date">2024</div>
+                        </div>
                     </div>
                     <div class="cert-card">
-                        <h4>SQL Certifications</h4>
-                        <div class="issuer">Datacamp</div>
-                        <div class="date">2025</div>
+                        <div class="cert-card-image">
+                            <img src="/sql.png?height=150&width=400" alt="SQL Certifications">
+                        </div>
+                        <div class="cert-card-content">
+                            <h4>SQL Certifications</h4>
+                            <div class="issuer">Datacamp</div>
+                            <div class="date">2025</div>
+                        </div>
                     </div>
                     <div class="cert-card">
-                        <h4>NOI Basic December Training</h4>
-                        <div class="issuer">NOI Singapore</div>
-                        <div class="date">2024</div>
+                        <div class="cert-card-image">
+                            <img src="/noit.png?height=150&width=400" alt="NOI Basic December Training">
+                        </div>
+                        <div class="cert-card-content">
+                            <h4>NOI Basic December Training</h4>
+                            <div class="issuer">NOI Committee</div>
+                            <div class="date">2024</div>
+                        </div>
                     </div>
                     <div class="cert-card">
-                        <h4>PY4E Certification</h4>
-                        <div class="issuer">Coursera</div>
-                        <div class="date">2023</div>
+                        <div class="cert-card-image">
+                            <img src="/py4e.png?height=150&width=400" alt="PY4E Certification">
+                        </div>
+                        <div class="cert-card-content">
+                            <h4>PY4E Certification</h4>
+                            <div class="issuer">Coursera</div>
+                            <div class="date">2023</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -416,7 +554,7 @@
             <div class="sub-section">
                 <h3>Download Certificate Portfolio</h3>
                 <div style="text-align: center; margin-top: 2rem;">
-                    <p style="margin-bottom: 2rem; color: #666; font-size: 1.1rem;">Download my competiiton certificates</p>
+                    <p style="margin-bottom: 2rem; color: #666; font-size: 1.1rem;">Download my complete certification portfolio as a PDF document</p>
                     <a href="cert.pdf" download="Darius_Yong_Certifications.pdf" class="download-btn">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -429,6 +567,13 @@
             </div>
         </section>
     </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Darius Yong. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
         // Smooth scrolling for navigation links
